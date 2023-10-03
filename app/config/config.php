@@ -1,32 +1,12 @@
 <?php
+
+require_once 'process-config.php';
+
+// ROOT PATH
+$rootdoc = $_SERVER['DOCUMENT_ROOT'];
+$rawPathRoot = $_SERVER['SCRIPT_NAME'];
+$path = str_replace("/index.php", "", $rawPathRoot);
+$rootuser = '/public';
+
 // URL Default
-$protocol = 'http://'; //keamanan website
-$host = ($_SERVER["HTTP_HOST"]); //get url
-$path = '/MVC'; //filebpatch
-
-define('BASEURL', $protocol . $host . $path);
-define('USERURL', $protocol . $host . $path . '/public');
-
-// Opsi
-// jaringan local
-// HTTP_HOST
-// jaringan internet
-// HTTP_REFERER
-
-// Method dan Index Default
-$method = 'Example'; //method
-$index = 'index'; //index
-
-define('Home', $method);
-define('index', $index);
-
-// Database
-$hostdb = '127.0.0.1';
-$userdb = 'root';
-$passdb = '';
-$namedb = 'mvc';
-
-define('DB_HOST', $hostdb);
-define('DB_USER', $userdb);
-define('DB_PASS', $passdb);
-define('DB_NAME', $namedb);
+$host = ($_SERVER["HTTP_HOST"]);
